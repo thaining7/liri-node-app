@@ -22,21 +22,10 @@ if (liriInput === "movie-this") {
     }
     axios.get("http://www.omdbapi.com/?t=" + movieTitle + "&y=&plot=short&apikey=trilogy").then(
         function (response) {
-
-            // console.log("The movie's rating is: " + response.data.imdbRating);
-            // console.log(response.data);
-            console.log(JSON.stringify(response.data, null, 2));
+            console.log("Title: " + response.data.Title, "Year: " + response.data.Year, "IMDB Rating " + response.data.imdbRating, "Country: " + response.data.Country, "Language: " + response.data.Language, "Plot: " + response.data.Plot, "Actors: " + response.data.Actors);
         });
 
 }
-// else (liriInput === "movie-this") {
-//     axios.get("http://www.omdbapi.com/?t=Mr. Nobody&y=&plot=short&apikey=trilogy").then(
-//         function (response) {
-
-//             // console.log("The movie's rating is: " + response.data.imdbRating);
-//             console.log(JSON.stringify(response.data, null, 2));
-//         });
-// }
 
 else if (liriInput === "spotify-this-song") {
     for (i = 3; i < liriInput1.length; i++) {
@@ -57,10 +46,14 @@ else if (liriInput === "concert-this") {
         artistName += liriInput1[i] + "";
     }
     axios.get("https://rest.bandsintown.com/artists/" + artistName + "/events?app_id=codingbootcamp").then(function (response) {
-        console.log(JSON.stringify(response.data, null, 2));
+        console.log(response.venue);
     });
 }
 
+// else if (liriInput === "do-what-it-says") {
+
+// }
+
 else {
-    console.log('Please type one of the following commands: concert-this "band name", movie-this "name of movie", spotify-this-song "name of song"');
+    console.log('Please type one of the following commands: concert-this "name of band", movie-this "name of movie", spotify-this-song "name of song", or do-what-it-says');
 }
