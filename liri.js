@@ -44,13 +44,17 @@ function switchCase() {
 // Concert this yo //
 
 function concertThis(liriInput1) {
+    if (liriInput1 === undefined) {
+        console.log("Please enter a band or artist name");
+    }
+    else {
+        artistName = liriInput1;
 
-    artistName = liriInput1;
-
-    // console.log("Artist Name: " + artistName);
-    axios.get("https://rest.bandsintown.com/artists/" + artistName + "/events?app_id=codingbootcamp").then(function (response) {
-        console.log("Name of venue: " + response.data[0].venue.name, "Country of venue: " + response.data[0].venue.country, "City of venue: " + response.data[0].venue.city, "Date of concert: " + moment(response.data[0].datetime).format("MM/DD/YYYY"));
-    });
+        // console.log("Artist Name: " + artistName);
+        axios.get("https://rest.bandsintown.com/artists/" + artistName + "/events?app_id=codingbootcamp").then(function (response) {
+            console.log("Name of venue: " + response.data[0].venue.name, "Country of venue: " + response.data[0].venue.country, "City of venue: " + response.data[0].venue.city, "Date of concert: " + moment(response.data[0].datetime).format("MM/DD/YYYY"));
+        });
+    }
 }
 
 
