@@ -6,7 +6,7 @@ LIRI is like iPhone's SIRI. However, while SIRI is a Speech Interpretation and R
 
 ### Operating Instructions
 
-To operate LIRI, simply type node-liri into the terminal to display the instructions of how to use the app. 
+To operate LIRI, simply type node liri into the terminal to display the instructions of how to use the app. 
 
 Here is a screenshot demonstrating LIRI:
 
