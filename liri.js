@@ -47,7 +47,7 @@ function concertThis(liriInput1) {
 
     artistName = liriInput1;
 
-    console.log("Artist Name: " + artistName);
+    // console.log("Artist Name: " + artistName);
     axios.get("https://rest.bandsintown.com/artists/" + artistName + "/events?app_id=codingbootcamp").then(function (response) {
         console.log("Name of venue: " + response.data[0].venue.name, "Country of venue: " + response.data[0].venue.country, "City of venue: " + response.data[0].venue.city, "Date of concert: " + moment(response.data[0].datetime).format("MM/DD/YYYY"));
     });
@@ -57,6 +57,7 @@ function concertThis(liriInput1) {
 // Spotify this yo //
 
 function spotifyThis(liriInput1) {
+
     if (liriInput1 === undefined) {
         songTitle = defaultSong;
     }
@@ -64,7 +65,7 @@ function spotifyThis(liriInput1) {
         songTitle = liriInput1;
     }
 
-    console.log("song title:" + songTitle);
+    // console.log("song title:" + songTitle);
     spotify
         .search({ type: 'track', query: songTitle })
         .then(function (response) {
@@ -79,17 +80,18 @@ function spotifyThis(liriInput1) {
 // Movie this yo //
 
 function movieThis(liriInput1) {
+
     if (liriInput1 === undefined) {
         movieTitle = defaultMovie;
     } else {
         movieTitle = liriInput1;
     }
 
-    console.log("Movie Title: " + movieTitle);
+    // console.log("Movie Title: " + movieTitle);
     axios.get("http://www.omdbapi.com/?t=" + movieTitle + "&y=&plot=short&apikey=trilogy").then(
         function (response) {
             // console.log(response.data);
-            console.log("Title: " + response.data.Title, "Year: " + response.data.Year, "IMDB Rating " + response.data.imdbRating, "Country: " + response.data.Country, "Language: " + response.data.Language, "Plot: " + response.data.Plot, "Actors: " + response.data.Actors);
+            console.log("Title: " + response.data.Title, "Year: " + response.data.Year, "IMDB Rating " + response.data.Ratings[0].Value, "Rotten Tomatoes Rating: " + response.data.Ratings[1].Value, "Country: " + response.data.Country, "Language: " + response.data.Language, "Plot: " + response.data.Plot, "Actors: " + response.data.Actors);
         });
 }
 
@@ -97,32 +99,31 @@ function movieThis(liriInput1) {
 // do-what-it-says //
 
 function doThis() {
-    if (liriInput === "do-what-it-says") {
-        fs.readFile("random.txt", "utf8", function (error, data) {
-            if (error) {
-                return console.log("Sorry theres a problem, check the file path");
-            }
-            // console.log(data);
-            var dataArr = data.split(",");
 
-            liriInput2 = dataArr[0];
+    fs.readFile("random.txt", "utf8", function (error, data) {
+        if (error) {
+            return console.log("Sorry, there's a problem, check the file path");
+        }
+        // console.log(data);
+        var dataArr = data.split(",");
 
-            liriInput3 = dataArr[1].trim().slice(1, -1);
+        liriInput2 = dataArr[0];
 
-            if (liriInput2 === "spotify-this-song") {
+        liriInput3 = dataArr[1].trim().slice(1, -1);
 
-                spotifyThis(liriInput3);
-            }
+        if (liriInput2 === "spotify-this-song") {
 
-            else if (liriInput2 === "concert-this") {
-                concertThis(liriInput3);
-            }
+            spotifyThis(liriInput3);
+        }
 
-            else if (liriInput2 === "movie-this") {
-                movieThis(liriInput3);
-            }
-        });
-    }
+        else if (liriInput2 === "concert-this") {
+            concertThis(liriInput3);
+        }
+
+        else if (liriInput2 === "movie-this") {
+            movieThis(liriInput3);
+        }
+    });
 }
 
 switchCase();
