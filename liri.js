@@ -112,11 +112,10 @@ function doThis() {
         var dataArr = data.split(",");
 
         liriInput2 = dataArr[0];
-
-        liriInput3 = dataArr[1].trim().slice(1, -1);
+        
+        liriInput3 = dataArr[1].trim().slice(1, -1).trim();
 
         if (liriInput2 === "spotify-this-song") {
-
             spotifyThis(liriInput3);
         }
 
