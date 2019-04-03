@@ -35,7 +35,7 @@ function switchCase() {
             break;
 
         default:
-            console.log('Please enter one of the following commands: concert-this "artist/band name", spotify-this-song "song name", movie-this "movie name", or "do-what-it-says" for a surprise!!!11!1!one');
+            console.log('Please enter one of the following commands: concert-this "artist/band name", spotify-this-song "song name", movie-this "movie name", or "do-what-it-says" for a mystery demo');
             break;
     }
 }
