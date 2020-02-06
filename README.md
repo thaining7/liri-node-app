@@ -1,16 +1,16 @@
 # LIRI Node App
 
-# Description
+## Description
 
 LIRI is like iPhone's SIRI. However, while SIRI is a Speech Interpretation and Recognition Interface, LIRI is a _Language_ Interpretation and Recognition Interface. LIRI is a command line node app that takes in parameters and gives you back data.
 
-# Screenshot
+## Screenshot
 
 Here is a screenshot demonstrating LIRI:
 
 ![LIRI Demo](liri-demo1.png)
 
-# Tech Used
+## Tech Used
 
 * JavaScript
 * Node.js
@@ -20,9 +20,9 @@ Here is a screenshot demonstrating LIRI:
 * Bands In Town API
 * OMDB API
 
-# Code Example
+## Code Example
 
-#### This switch statement takes in terminal input commands using process.argv. Each command is attached to the relative API.
+This switch statement takes in terminal input commands using process.argv. Each command is attached to the relative API.
 
 ```
 ...
@@ -57,17 +57,17 @@ function switchCase() {
 }
 ```
 
-# API Reference
+## API Reference
 
 * Spotify: https://developer.spotify.com/documentation/web-api/reference/
 * OMDB: http://www.omdbapi.com/
 * Bands In Town: https://www.artists.bandsintown.com/support/api-installation
 
-# Operating Instructions
+## Operating Instructions
 
 To operate LIRI, simply type "node liri" into the terminal. It will then display operating instructions on the screen. 
 
-# Additional Features
+## Additional Features
 
 The movie-this and spotify-this commands have default parameters. Simply type either of those commands with no specifying parameter to load it's default. 
 
