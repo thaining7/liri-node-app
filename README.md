@@ -1,6 +1,6 @@
 # LIRI Node App
 
-### Description
+# Description
 
 LIRI is like iPhone's SIRI. However, while SIRI is a Speech Interpretation and Recognition Interface, LIRI is a _Language_ Interpretation and Recognition Interface. LIRI is a command line node app that takes in parameters and gives you back data.
 
@@ -63,11 +63,11 @@ function switchCase() {
 * OMDB: http://www.omdbapi.com/
 * Bands In Town: https://www.artists.bandsintown.com/support/api-installation
 
-### Operating Instructions
+# Operating Instructions
 
 To operate LIRI, simply type "node liri" into the terminal. It will then display operating instructions on the screen. 
 
-### Additional Features
+# Additional Features
 
 The movie-this and spotify-this commands have default parameters. Simply type either of those commands with no specifying parameter to load it's default. 
 
