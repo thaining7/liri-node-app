@@ -69,6 +69,6 @@ To operate LIRI, simply type "node liri" into the terminal. It will then display
 
 ## Additional Features
 
-The movie-this and spotify-this commands have default parameters. Simply type either of those commands with no specifying parameter to load it's default. 
+The "movie-this" and "spotify-this" commands have default parameters. Simply type either of those commands with no specifying parameter to load it's default. 
 
-The spotify-this command also allows the user to specify the artist/band name with the name of the song you want to look up. Simply type the name of the artist or band before the name of the song. 
+The "spotify-this" command also allows the user to specify the artist/band name with the name of the song you want to look up. Simply type the name of the artist or band before the name of the song. 
